@@ -28,6 +28,4 @@ jobs:
         run: npm run format
 
       - name: Check commit message
-        uses: wagoid/commitlint-github-action@v3
-        with:
-          configFile: commitlint.config.cjs
+        run: npx commitlint --from ${{ github.event.before }} --to ${{ github.sha }}
