@@ -55,6 +55,10 @@
     "app/**/*.{ts,tsx,js,jsx,json,md}": [
       "npm run lint",
       "npm run format"
+    ],
+    "components/**/*.{ts,tsx,js,jsx,json,md}": [
+      "npm run lint",
+      "npm run format"
     ]
   }
 }
