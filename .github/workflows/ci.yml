@@ -26,6 +26,3 @@ jobs:
 
       - name: Run format checker
         run: npm run format
-
-      - name: Check commit message
-        run: npx commitlint --from ${{ github.event.before }} --to ${{ github.sha }}

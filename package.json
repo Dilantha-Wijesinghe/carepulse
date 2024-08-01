@@ -6,22 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint app --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint app --ext ts,tsx,js,jsx --fix",
+    "lint": "eslint app components --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint app components --ext ts,tsx,js,jsx --fix",
     "format": "prettier --write 'app/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "nextlint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.408.0",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
+    "node-appwrite": "^13.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
+    "react-phone-number-input": "^3.4.3",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -48,6 +55,10 @@
   },
   "lint-staged": {
     "app/**/*.{ts,tsx,js,jsx,json,md}": [
+      "npm run lint",
+      "npm run format"
+    ],
+    "components/**/*.{ts,tsx,js,jsx,json,md}": [
       "npm run lint",
       "npm run format"
     ]
