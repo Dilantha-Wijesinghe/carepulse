@@ -3,6 +3,7 @@
 import { ID, Query } from "node-appwrite";
 import { users } from "../appwrite.config";
 
+/* eslint-disable-next-line no-undef */
 export const createUser = async (user: CreateUserParams) => {
   try {
     const newUser = await users.create(
